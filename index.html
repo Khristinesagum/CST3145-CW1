@@ -37,6 +37,13 @@
         <button class="sort" v-on:click="sortbySubjDESC" v-show="sortBy == 'subject'" >
             <span class="fas fa-sort-alpha-down-alt"></span> descending
         </button>
+
+        <button class="sort" v-on:click="SortLesson('Location')"  v-show="sortBy == 'Location'" >
+            <span class="fas fa-sort-alpha-up-alt"></span> ascending
+        </button>
+        <button class="sort" v-on:click="sortbyLocDESC" v-show="sortBy == 'Location'" >
+            <span class="fas fa-sort-alpha-down-alt"></span> descending
+        </button>
         
     </div>
    
@@ -176,27 +183,22 @@
                     },
                     sortByLocation(){
                     this.lesson.sort( function( a, b ){
-                        if( this.sortDirection == 'ASC' ){
                         return ( ( a.Location == b.Location ) ? 0 : ( ( a.Location > b.Location ) ? 1 : -1 ) );
-                    }
-                        if( this.sortDirection == 'DESC' ){
-                         return ( ( a.Location == b.Location ) ? 0 : ( ( a.Location < b.Location ) ? 1 : -1 ) );
-                    }
                     }.bind(this));
                     },
                     sortbyPrice(){
                     this.lesson.sort( function( a, b ){
-                        if( this.sortDirection == 'ASC' ){
                         return ( ( a.Price == b.Price ) ? 0 : ( ( a.Price > b.Price ) ? 1 : -1 ) );
-                    }
-                        if( this.sortDirection == 'DESC' ){
-                         return ( ( a.Price == b.Price ) ? 0 : ( ( a.Price < b.Price ) ? 1 : -1 ) );
-                    }
                     }.bind(this));
                     },
                     sortbySubjDESC(){
                         this.lesson.sort( function( a, b ){
                         return ( ( a.subject == b.subject ) ? 0 : ( ( a.subject < b.subject ) ? 1 : -1 ) );
+                    }.bind(this));
+                    },
+                    sortbyLocDESC(){
+                        this.lesson.sort( function( a, b ){
+                        return ( ( a.Location == b.Location ) ? 0 : ( ( a.Location < b.Location ) ? 1 : -1 ) );
                     }.bind(this));
                     }
 
