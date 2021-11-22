@@ -76,13 +76,13 @@
                 <h2>Checkout Page</h2>
                 <p>
                     <strong>Name:</strong>  
-                    <input class="textfield" v.model="FullName" type="text" />
+                    <input class="textfield" v-model="FullName" value="" type="text" />
                 </p>
                 <p>
                     <strong>Phone:</strong>
-                    <input class="textfield" v.model.number="order.Phone" type="number"/>
+                    <input class="textfield" v-model.number="PhoneNumber" value="" type="number"/>
                 </p>
-                <button class="buttonCheckout"  v-on:click="submitForm" :disabled="isDisabled" >Checkout</button>
+                <button class="buttonCheckout"  v-on:click="submitForm" v-bind:disabled="isDisabled" >Checkout</button>
                 
             </div>
         </div>
@@ -99,6 +99,7 @@
                 cart: [],
                 showLessons: true,
                 FullName: '',
+                PhoneNumber: 0,
                 return:{
                     sortBy: 'subject',
                     sortBy: 'Location',
@@ -203,7 +204,7 @@
                     return this.cart.length || '' ;
                 },
                 isDisabled: function(){
-                    return this.FullName ? false:true;
+                    return this.FullName && this.PhoneNumber > 0 ? false : true;
                 }
             }
 

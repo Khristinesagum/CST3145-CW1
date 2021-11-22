@@ -122,9 +122,9 @@ h2{
     margin-left: 10%;
     
 }
-.buttonCheckoutDisabled {
+.buttonCheckout:disabled {
     background-color: rgba(236, 236, 236, 0.959);
-    color: black;
+    color: grey;
     border: none;
     border-radius: 2px;
     font-size: small;
