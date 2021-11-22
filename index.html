@@ -30,13 +30,13 @@
         <button class="sort" v-on:click="SortLesson('Price')">
             <span class="fas fa-pound-sign"></span> Price
         </button>
-        <button class="sort" >
+
+        <button class="sort" v-on:click="SortLesson('subject')"  v-show="sortBy == 'subject'" >
             <span class="fas fa-sort-alpha-up-alt"></span> ascending
         </button>
-        <button class="sort" v-on:click="sortByDESC('subject')" >
+        <button class="sort" v-on:click="sortbySubjDESC" v-show="sortBy == 'subject'" >
             <span class="fas fa-sort-alpha-down-alt"></span> descending
         </button>
-
         
     </div>
    
@@ -99,12 +99,12 @@
                 cart: [],
                 showLessons: true,
                 FullName: '',
-                PhoneNumber: 0,
+                PhoneNumber: '',
                 return:{
                     sortBy: 'subject',
                     sortBy: 'Location',
                     sortBy: 'Price',
-                    sortDirection: 'ASC'
+                    sortDirection: 'ASC',
                 },
                 order: {
                     Name:'',
@@ -126,6 +126,9 @@
                 },
                 canAddToCart(lesson){
                     return lesson.Spaces > this.cartCount(lesson.id);
+                },
+                subjectSort(){
+                    return sortBy = 'subjects'
                 },
                 cartCount(id) {
                     let count = 0;
@@ -168,12 +171,7 @@
                 },
                     sortBySubjects(){
                     this.lesson.sort( function( a, b ){
-                        if( this.sortDirection == 'ASC' ){
                         return ( ( a.subject == b.subject ) ? 0 : ( ( a.subject > b.subject ) ? 1 : -1 ) );
-                    }
-                        if( this.sortDirection == 'DESC' ){
-                         return ( ( a.subject == b.subject ) ? 0 : ( ( a.subject < b.subject ) ? 1 : -1 ) );
-                    }
                     }.bind(this));
                     },
                     sortByLocation(){
@@ -195,6 +193,11 @@
                          return ( ( a.Price == b.Price ) ? 0 : ( ( a.Price < b.Price ) ? 1 : -1 ) );
                     }
                     }.bind(this));
+                    },
+                    sortbySubjDESC(){
+                        this.lesson.sort( function( a, b ){
+                        return ( ( a.subject == b.subject ) ? 0 : ( ( a.subject < b.subject ) ? 1 : -1 ) );
+                    }.bind(this));
                     }
 
                 
@@ -204,7 +207,7 @@
                     return this.cart.length || '' ;
                 },
                 isDisabled: function(){
-                    return this.FullName && this.PhoneNumber > 0 ? false : true;
+                    return this.FullName && this.PhoneNumber ? false : true;
                 }
             }
 
