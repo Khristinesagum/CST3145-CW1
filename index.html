@@ -44,6 +44,13 @@
         <button class="sort" v-on:click="sortbyLocDESC" v-show="sortBy == 'Location'" >
             <span class="fas fa-sort-alpha-down-alt"></span> descending
         </button>
+
+        <button class="sort" v-on:click="SortLesson('Price')"  v-show="sortBy == 'Price'" >
+            <span class="fas fa-sort-alpha-up-alt"></span> ascending
+        </button>
+        <button class="sort" v-on:click="sortbyPriceDESC" v-show="sortBy == 'Price'" >
+            <span class="fas fa-sort-alpha-down-alt"></span> descending
+        </button>
         
     </div>
    
@@ -199,6 +206,11 @@
                     sortbyLocDESC(){
                         this.lesson.sort( function( a, b ){
                         return ( ( a.Location == b.Location ) ? 0 : ( ( a.Location < b.Location ) ? 1 : -1 ) );
+                    }.bind(this));
+                    },
+                    sortbyPriceDESC(){
+                        this.lesson.sort( function( a, b ){
+                        return ( ( a.Price == b.Price ) ? 0 : ( ( a.Price < b.Price ) ? 1 : -1 ) );
                     }.bind(this));
                     }
 
