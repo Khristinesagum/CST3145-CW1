@@ -18,15 +18,15 @@ let lessons = [
     {
         "id": 1003,
         "subject": "Music",
-        "Location": "London",
-        "Price": 100,
+        "Location": "Bristol",
+        "Price": 90,
         "Spaces": 5,
         "image": "SubjectsImages/Music.jpg"
     },
     {
         "id": 1004,
         "subject": "Physical Education",
-        "Location": "York",
+        "Location": "Manchester",
         "Price": 80,
         "Spaces": 5,
         "image": "SubjectsImages/PE.jpg"
@@ -34,15 +34,15 @@ let lessons = [
     {
         "id": 1005,
         "subject": "Arts",
-        "Location": "London",
-        "Price": 100,
+        "Location": "Birmingham",
+        "Price": 90,
         "Spaces": 5,
         "image": "SubjectsImages/Arts.jpg"
     },
     {
         "id": 1006,
         "subject": "History",
-        "Location": "York",
+        "Location": "Liverpool",
         "Price": 80,
         "Spaces": 5,
         "image": "SubjectsImages/History.png"
@@ -50,7 +50,7 @@ let lessons = [
     {
         "id": 1007,
         "subject": "Geography",
-        "Location": "London",
+        "Location": "Newcastle",
         "Price": 100,
         "Spaces": 5,
         "image": "SubjectsImages/Geography.PNG"
@@ -58,7 +58,7 @@ let lessons = [
     {
         "id": 1008,
         "subject": "Computer",
-        "Location": "York",
+        "Location": "Leeds",
         "Price": 80,
         "Spaces": 5,
         "image": "SubjectsImages/Computer.png"
@@ -66,7 +66,7 @@ let lessons = [
     {
         "id": 1009,
         "subject": "Literacy",
-        "Location": "London",
+        "Location": "Cambridge",
         "Price": 74,
         "Spaces": 5,
         "image": "SubjectsImages/Literacy.PNG"
@@ -74,7 +74,7 @@ let lessons = [
     {
         "id": 1010,
         "subject": "Science",
-        "Location": "York",
+        "Location": "Oxford",
         "Price": 75,
         "Spaces": 5,
         "image": "SubjectsImages/Science.png"
