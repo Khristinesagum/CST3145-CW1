@@ -61,6 +61,10 @@ h3 {
     font-size: small;
     padding: 1%;
 }
+.shoppingCart:active{
+    background-color: #4472C4;
+    transform: translateY(4px);
+}
 header {
     background-color: steelblue;
     height: 85px;
@@ -74,6 +78,14 @@ header {
     font-size: smaller;
     padding: 1%;
 }
+.sort:active{
+    background-color: #4472C4;
+    transform: translateY(4px);
+}
+.sort:hover {
+    background-color: #4472C4;
+}
+
 .button {
     background-color: #4472C4;
     color: white;
@@ -82,6 +94,10 @@ header {
     font-size: small;
     padding: 2%;
     margin-left: 5%;
+}
+.button:active {
+    background-color: #4472C4;
+    transform: translateY(4px);
 }
 .buttonDisabled {
     background-color: rgba(236, 236, 236, 0.959);
@@ -152,4 +168,17 @@ h2{
     border-radius: 2px;
     font-size: small;
     padding: 2%;
+}
+.previousButton {
+    background-color: #4472C4;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: small;
+    padding: 1%;
+    margin-left: 3%;
+}
+.previousButton:active{
+    background-color: #4472C4;
+    transform: translateY(4px);
 }

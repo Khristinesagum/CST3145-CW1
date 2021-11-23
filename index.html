@@ -77,6 +77,7 @@
         </div>
         <div v-else>
             <h3 style="margin-left: 3%;">Shopping cart</h3>
+            <button class="previousButton" v-on:click='previousPage'>Go to lessons</button>
             <div class="all">
             <div class="clearfix" v-for="lesson in cart">
                 <div class="border">    
@@ -161,6 +162,10 @@
                     if(this.cart.splice(this.cart.indexOf(lesson),1)){
                         lesson.Spaces =lesson.Spaces +1;
                     }
+                        
+                },
+                previousPage(){
+                    this.showLessons = this.showLessons ? false: true;
                         
                 },
                 SortLesson( by ){
