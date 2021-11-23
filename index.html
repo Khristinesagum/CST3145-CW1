@@ -17,6 +17,10 @@
         <button class="shoppingCartDisabled" disabled="disabled" v-else>
             <span class="fas fa-cart-plus"> </span>Shopping cart
         </button>
+        <p class="search">
+            <input class="searchText" id="input" v-model="search" placeholder="search..." type="text"/>
+            <button class="searchButton" id="searchtbn" value="search">search</button>
+        </p>
     </header><br>
     <div class="secondDiv">
 

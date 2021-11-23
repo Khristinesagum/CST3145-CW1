@@ -133,3 +133,23 @@ h2{
     margin-left: 10%;
     
 }
+.search{
+    margin-left: 74%;
+    margin-top: 2%;
+}
+.searchText {
+    border-radius: 3px;
+    color: black;
+    border: 1px solid black;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 2%;
+}
+.searchButton {
+    background-color: #4472C4;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: small;
+    padding: 2%;
+}
