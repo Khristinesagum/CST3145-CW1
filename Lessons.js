@@ -53,7 +53,7 @@ let lessons = [
         "Location": "Newcastle",
         "Price": 100,
         "Spaces": 5,
-        "image": "SubjectsImages/Geography.PNG"
+        "image": "SubjectsImages/Geography.png"
     },
     {
         "id": 1008,
@@ -69,7 +69,7 @@ let lessons = [
         "Location": "Cambridge",
         "Price": 74,
         "Spaces": 5,
-        "image": "SubjectsImages/Literacy.PNG"
+        "image": "SubjectsImages/Literacy.png"
     },
     {
         "id": 1010,
