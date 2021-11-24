@@ -19,7 +19,6 @@
         </button>
         <p class="search">
             <input class="searchText" id="input" v-model="search" placeholder="search..." type="text"/>
-            <button class="searchButton" id="searchtbn" value="search">search</button>
         </p>
     </header><br>
     <div class="secondDiv">
@@ -61,7 +60,7 @@
     <main >
         <div class="all" v-if='showLessons'>
 
-        <div class="clearfix" v-for="lesson in lesson">
+        <div class="clearfix" v-for="lesson in searchInput">
             <div class="border">
            <figure>
             <img v-bind:src="lesson.image">
@@ -110,6 +109,12 @@
 
 </div>
 <script type="text/javascript">
+    class list {
+        constructor(subject, Location){
+            this.subject = subject;
+            this.Location = Location;
+        }
+    }
     var School = new Vue({
             el: "#app",
             data: {
@@ -119,6 +124,7 @@
                 showLessons: true,
                 FullName: '',
                 PhoneNumber: '',
+                search: '',
                 return:{
                     sortBy: 'subject',
                     sortBy: 'Location',
@@ -231,6 +237,12 @@
                 },
                 isDisabled: function(){
                     return this.FullName && this.PhoneNumber ? false : true;
+                },
+                searchInput: function(){
+                    return this.lesson.filter(list =>{
+                        return list.subject.toLowerCase().includes(this.search.toLowerCase()) 
+                        || list.Location.toLowerCase().includes(this.search.toLowerCase())
+                    })
                 }
             }
 
