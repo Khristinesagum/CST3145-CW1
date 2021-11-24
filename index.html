@@ -94,11 +94,11 @@
                 <h2>Checkout Page</h2>
                 <p>
                     <strong>Name:</strong>  
-                    <input class="textfield" v-model="FullName" value="" type="text" />
+                    <input class="textfield" v-model="FullName" value="" name="" onkeypress="onlyLetters(event)" type="text" />
                 </p>
                 <p>
                     <strong>Phone:</strong>
-                    <input class="textfield" v-model.number="PhoneNumber" value="" type="number"/>
+                    <input class="textfield" v-model.number="PhoneNumber" value="" onkeypress="onlyNumbers(event)"/>
                 </p>
                 <button class="buttonCheckout"  v-on:click="submitForm" v-bind:disabled="isDisabled" >Checkout</button>
                 
@@ -113,6 +113,19 @@
         constructor(subject, Location){
             this.subject = subject;
             this.Location = Location;
+        }
+    }
+    
+    function onlyLetters(evt){
+        var texts = String.fromCharCode(evt.which);
+        if(!(/[a-zA-Z]/.test(texts))){
+            evt.preventDefault();
+        }
+    }
+    function onlyNumbers(evt){
+        var texts = String.fromCharCode(evt.which);
+        if(!(/[0-9]/.test(texts))){
+            evt.preventDefault();
         }
     }
     var School = new Vue({
