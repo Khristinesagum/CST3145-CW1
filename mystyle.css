@@ -113,6 +113,11 @@ header {
 }
 .checkoutPage {
     text-align: center;
+    margin-top: 5%;
+    box-shadow: 1px 1px 3px lightgrey;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 4%;
 }
 h2{
     margin-left: 5%;
